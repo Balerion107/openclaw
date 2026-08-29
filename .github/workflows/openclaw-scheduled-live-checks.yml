@@ -1,8 +1,10 @@
 name: OpenClaw Scheduled Live And E2E Checks
 
+# Fork note: automatic scheduling is disabled here because this upstream
+# operational suite expects a large set of provider credentials and runner
+# infrastructure that is not configured for this fork. Manual dispatch remains
+# available for deliberate testing after fork-specific configuration.
 on:
-  schedule:
-    - cron: "23 4 * * *"
   workflow_dispatch:
 
 permissions:

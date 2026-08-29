@@ -3,10 +3,12 @@ name: PR CI Sweeper
 # Repairs dropped pull_request CI via close/reopen and non-destructively revives
 # cancelled GitHub Actions checks attached to auto-merge PR heads. The app token
 # authorizes reruns; GITHUB_TOKEN close/reopen events would not trigger CI.
+#
+# Fork note: automatic scheduling is intentionally disabled in this fork because
+# this workflow depends on upstream GitHub App credentials. It can still be run
+# manually after fork-specific credentials are configured.
 
 on:
-  schedule:
-    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

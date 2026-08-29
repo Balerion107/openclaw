@@ -1,12 +1,11 @@
 name: Live Media Runner Image
 
+# Fork note: automatic push-triggered builds are disabled because this workflow
+# requires Blacksmith runner infrastructure and publishes to the upstream
+# openclaw GHCR namespace. Manual dispatch remains available for intentional
+# fork-specific adaptation.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - ".github/images/live-media-runner/Dockerfile"
-      - ".github/workflows/live-media-runner-image.yml"
 
 permissions:
   contents: read

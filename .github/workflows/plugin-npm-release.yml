@@ -2,8 +2,6 @@ name: Plugin NPM Release
 run-name: ${{ github.event_name == 'workflow_dispatch' && (inputs.preflight_only && inputs.trusted_publisher_preflight && format('Plugin NPM Trusted Publisher Preflight [{0}] {1}', inputs.npm_dist_tag, inputs.ref) || inputs.preflight_only && inputs.dispatch_id != '' && format('Plugin NPM Artifact Preflight [{0}] {1} ({2})', inputs.npm_dist_tag, inputs.ref, inputs.dispatch_id) || inputs.preflight_only && format('Plugin NPM Artifact Preflight [{0}] {1}', inputs.npm_dist_tag, inputs.ref) || format('Plugin NPM Release [{0}] {1}', inputs.npm_dist_tag, inputs.ref)) || format('Plugin NPM Release [default] {0}', github.sha) }}
 
 on:
-  schedule:
-    - cron: "23 * * * *"
   push:
     branches:
       - main

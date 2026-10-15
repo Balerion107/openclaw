@@ -1,8 +1,6 @@
 name: Node Runtime Conformance
 
 on:
-  schedule:
-    - cron: "23 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
